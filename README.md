@@ -22,7 +22,6 @@ This module will introduce you to `git` command-line program and the GitHub clou
   - [Committing](#committing)
     - [Commit Message Etiquette](#commit-message-etiquette)
   - [Commit History](#commit-history)
-  - [The `.gitignore` File](#the-gitignore-file)
   - [Reviewing the Process](#reviewing-the-process)
     - [Practice](#practice)
 - [GitHub and Remotes](#github-and-remotes)
@@ -205,26 +204,6 @@ git log [--oneline]
 
 This will give you a list of the _sequence_ of commits you've made: you can see who made what changes and when. (We use the term **HEAD** to refer to the most recent commit). The optional `--oneline` option gives you a nice compact version. Note that each commit is listed with its [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hash (the random numbers and letters), which we use to identify each commit.
 
-
-### The `.gitignore` File
-Sometimes you want git to always ignore particular directories or files in your project. For example, if you use a Mac and you tend to organize your files in the Finder, the operating system will create a hidden file in that folder named `.DS_Store` (the leading dot makes it "hidden") to track the positions of icons, which folders have been "expanded", etc. This file will likely be different from machine to machine. If it is added to your repository and you work from multiple machines (or as part of a team), it could lead to a lot of merge conflicts (not to mention cluttering up the folders for Windows users).
-
-You can tell git to ignore files like these by creating a special _hidden_ file in your project directory called `.gitignore` (note the leading dot). This file contains a list of files or folders that git should "ignore" and pretend don't exist. The file uses a very simple format: each line should list a directory or file path to ignore. For example:
-
-```bash
-# Mac system file; the leading # marks a comment
-.DS_Store
-
-# example: don't check in passwords or ssl keys!
-secret/my_password.txt
-
-# example: don't include large files or libraries
-movies/my_four_hour_epic.mov
-```
-
-You should create a `.gitignore` file to practice saving changes to git. Using your preferred text editor, create a new file called `.gitignore` _directly inside_ your repo. Add `.DS_Store` to the ignore file by just listing the file name.
-
-Run `git status` to see what your repo's status is now. Then `add` and `commit` your new `.gitignore` file (with an appropriate commit message!) and check the status again.
 
 ### Reviewing the Process
 This cycle of "edit files", "add files", "commit changes" is the standard "development loop" when working with git.
